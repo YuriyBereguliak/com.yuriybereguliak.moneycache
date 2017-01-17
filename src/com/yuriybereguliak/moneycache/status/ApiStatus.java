@@ -37,7 +37,7 @@ public class ApiStatus {
 		String json = null;
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 	
-		ArrayList<Task> tasks = new ArrayList<>();
+		ArrayList<Task> tasks = new ArrayList<Task>();
 		for (int i = 0; i < 30; i++) {
 			Task task = new Task();
 			task.setTaskId(i);
