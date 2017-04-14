@@ -44,7 +44,7 @@ public class ApiStatus {
 			Task task = new Task();
 			task.setTaskId(i);
 			task.setTaskTitle("Task #" + i);
-			task.setTaskDescription("Task description. Description #" + random.nextInt(i));
+			task.setTaskDescription("Task description. Description #" + random.nextInt(1500));
 			task.setTaskCreate(new Date());
 			task.setImageUri("http://icons.iconarchive.com/icons/martz90/circle/512/android-icon.png");
 			tasks.add(task);
