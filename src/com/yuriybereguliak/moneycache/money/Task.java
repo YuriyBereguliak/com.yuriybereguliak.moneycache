@@ -14,6 +14,8 @@ public class Task {
 	private int taskRating;
 	@SuppressWarnings("unused")
 	private Date taskCreate;
+	@SuppressWarnings("unused")
+	private String imageUri;
 	
 	/**
 	 *  Default constructor
@@ -42,5 +44,7 @@ public class Task {
 		this.taskCreate = taskCreate;
 	}
 
-	
+	public void setImageUri(String imageUri) {
+		this.imageUri = imageUri;
+	}
 }

@@ -2,6 +2,7 @@ package com.yuriybereguliak.moneycache.status;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Random;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -37,13 +38,15 @@ public class ApiStatus {
 		String json = null;
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 	
+		Random random = new Random();
 		ArrayList<Task> tasks = new ArrayList<Task>();
 		for (int i = 0; i < 30; i++) {
 			Task task = new Task();
 			task.setTaskId(i);
 			task.setTaskTitle("Task #" + i);
-			task.setTaskDescription("Task description. Description #" + i);
+			task.setTaskDescription("Task description. Description #" + random.nextInt(i));
 			task.setTaskCreate(new Date());
+			task.setImageUri("http://icons.iconarchive.com/icons/martz90/circle/512/android-icon.png");
 			tasks.add(task);
 		}
 		
