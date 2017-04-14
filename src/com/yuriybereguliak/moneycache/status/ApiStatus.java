@@ -18,6 +18,7 @@ public class ApiStatus {
 
 	private static final String apiVersion = "v.1.0";
 	
+	
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public String getTitle() {
@@ -39,6 +40,16 @@ public class ApiStatus {
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 	
 		Random random = new Random();
+		String[] images = {
+				"http://icons.iconarchive.com/icons/martz90/circle/512/android-icon.png",
+				"http://orig04.deviantart.net/67cd/f/2012/309/8/c/android_icon_by_gabrydesign-d4m7he9.png",
+				"https://cdn4.iconfinder.com/data/icons/social-papercut/512/android.png",
+				"http://1.bp.blogspot.com/-ZLllok8mx-I/VRDgvP92M6I/AAAAAAAAIJA/7NmT18_AGeo/s1600/ANDROID.png",
+				"http://www.iconsdb.com/icons/preview/orange/android-4-xxl.png",
+				"http://www.iconsdb.com/icons/preview/orange/android-5-xxl.png",
+				"https://elandroidelibre.elespanol.com/wp-content/uploads/2011/07/themechooser.icon_.png"
+		};
+		
 		ArrayList<Task> tasks = new ArrayList<Task>();
 		for (int i = 0; i < 30; i++) {
 			Task task = new Task();
@@ -46,7 +57,7 @@ public class ApiStatus {
 			task.setTaskTitle("Task #" + i);
 			task.setTaskDescription("Task description. Description #" + random.nextInt(1500));
 			task.setTaskCreate(new Date());
-			task.setImageUri("http://icons.iconarchive.com/icons/martz90/circle/512/android-icon.png");
+			task.setImageUri(images[random.nextInt(images.length)]);
 			tasks.add(task);
 		}
 		
