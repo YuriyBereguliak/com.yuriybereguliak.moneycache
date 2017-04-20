@@ -69,7 +69,7 @@ public class ApiStatus {
 	@GET
 	@Path("/medical")
 	@Produces(MediaType.APPLICATION_JSON)
-	public String json(){
+	public String medical(){
 		String json = "sdcsdcsdcsdcsdcsdcsdcsdcsdcsdc";
 		
 		return json;
