@@ -80,7 +80,7 @@ public class ApiStatus {
 		 JSONParser parser = new JSONParser();
 		 JSONObject jsonObject = null;
 		 try {
-		 Object obj = parser.parse(new FileReader("emergency_format.json"));
+		 Object obj = parser.parse(new FileReader("src/emergency_format.json"));
          jsonObject = (JSONObject) obj;
 		 } catch (FileNotFoundException e) {
 	            e.printStackTrace();
