@@ -76,7 +76,7 @@ public class ApiStatus {
 	@GET
 	@Path("/medical")
 	@Produces(MediaType.APPLICATION_JSON)
-	public JSONObject medical() {
+	public String medical() {
 		 JSONParser parser = new JSONParser();
 		 JSONObject jsonObject = null;
 		 try {
@@ -89,6 +89,6 @@ public class ApiStatus {
 	        } catch (ParseException e) {
 	            e.printStackTrace();
 	        }
-		return jsonObject;
+		return jsonObject.toString();
 	}
 }
