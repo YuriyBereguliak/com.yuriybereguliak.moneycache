@@ -89,6 +89,10 @@ public class ApiStatus {
 	        } catch (ParseException e) {
 	            e.printStackTrace();
 	        }
-		return jsonObject.toString();
+		 if (jsonObject != null) {
+			 return jsonObject.toString();
+		 } else {
+			 return "{Could not find file}";
+		 }
 	}
 }
