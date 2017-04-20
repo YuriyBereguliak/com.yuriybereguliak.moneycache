@@ -66,5 +66,12 @@ public class ApiStatus {
 		return json;
 	}
 	
-
+	@GET
+	@Path("/medical")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String json(){
+		String json = "sdcsdcsdcsdcsdcsdcsdcsdcsdcsdc";
+		
+		return json;
+	}
 }
