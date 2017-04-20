@@ -76,11 +76,12 @@ public class ApiStatus {
 	@GET
 	@Path("/medical")
 	@Produces(MediaType.APPLICATION_JSON)
-	public String medical() {
+	public JSONObject medical() {
 		 JSONParser parser = new JSONParser();
+		 JSONObject jsonObject = null;
 		 try {
 		 Object obj = parser.parse(new FileReader("emergency_format.json"));
-         JSONObject jsonObject = (JSONObject) obj;
+         jsonObject = (JSONObject) obj;
 		 } catch (FileNotFoundException e) {
 	            e.printStackTrace();
 	        } catch (IOException e) {
