@@ -70,8 +70,8 @@ public class ApiStatus {
 	@Path("/medical")
 	@Produces(MediaType.APPLICATION_JSON)
 	public String medical() {
-		String json = "sdcsdcsdcsdcsdcsdcsdcsdcsdcsdc";
-		
-		return json;
+		 Object obj = parser.parse(new FileReader("emergency_format.json"));
+         JSONObject jsonObject = (JSONObject) obj;
+		return jsonObject;
 	}
 }
