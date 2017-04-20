@@ -3,6 +3,9 @@ package com.yuriybereguliak.moneycache.status;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -10,6 +13,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.yuriybereguliak.moneycache.money.Task;
@@ -71,8 +77,17 @@ public class ApiStatus {
 	@Path("/medical")
 	@Produces(MediaType.APPLICATION_JSON)
 	public String medical() {
+		 JSONParser parser = new JSONParser();
+		 try {
 		 Object obj = parser.parse(new FileReader("emergency_format.json"));
          JSONObject jsonObject = (JSONObject) obj;
+		 } catch (FileNotFoundException e) {
+	            e.printStackTrace();
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        } catch (ParseException e) {
+	            e.printStackTrace();
+	        }
 		return jsonObject;
 	}
 }
