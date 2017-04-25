@@ -75,7 +75,7 @@ public class ApiStatus {
 	
 	@GET
 	@Path("/medical")
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON + "; charset=UTF-8")
 	public String medical() {
 		 JSONParser parser = new JSONParser();
 		 JSONObject jsonObject = null;
