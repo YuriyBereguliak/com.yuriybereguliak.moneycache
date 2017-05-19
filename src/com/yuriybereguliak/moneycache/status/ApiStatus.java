@@ -19,6 +19,7 @@ import org.json.simple.parser.ParseException;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.yuriybereguliak.moneycache.money.Task;
+import com.yuriybereguliak.moneycache.money.User;
 
 @Path("/v1/status")
 public class ApiStatus {
@@ -71,6 +72,19 @@ public class ApiStatus {
 		json = gson.toJson(tasks);
 		
 		return json;
+	}
+	
+	@GET
+	@Path("/user")
+	@Produces(MediaType.APPLICATION_JSON + "; charset=UTF-8")
+	public String getUserInfo(){
+		Gson gson = new Gson();
+		User user = new User();
+		user.setmUserId(1);
+		user.setmFirstName("Андрій");
+		user.setmLastName("Сидоренко");
+		user.setmLogin("andruha_sidor_95");
+		return gson.toJson(user);
 	}
 	
 	@GET
