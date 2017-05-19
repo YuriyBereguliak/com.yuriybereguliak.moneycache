@@ -76,7 +76,7 @@ public class ApiStatus {
 	
 	@GET
 	@Path("/user")
-	@Produces(MediaType.APPLICATION_JSON + "; charset=UTF-8")
+	@Produces(MediaType.APPLICATION_JSON)
 	public String getUserInfo(){
 		Gson gson = new Gson();
 		User user = new User();
