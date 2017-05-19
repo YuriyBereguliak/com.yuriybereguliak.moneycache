@@ -81,8 +81,8 @@ public class ApiStatus {
 		Gson gson = new Gson();
 		User user = new User();
 		user.setmUserId(1);
-		user.setmFirstName("Андрій");
-		user.setmLastName("Сидоренко");
+		user.setmFirstName("Andrii");
+		user.setmLastName("Sidorenko");
 		user.setmLogin("andruha_sidor_95");
 		return gson.toJson(user);
 	}
