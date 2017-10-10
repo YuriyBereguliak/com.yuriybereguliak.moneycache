@@ -13,6 +13,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import org.json.simple.JSONObject;
+import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
@@ -51,10 +52,10 @@ public class UsersDataSource {
 	@Produces(MediaType.APPLICATION_JSON + "; charset=UTF-8")
 	public String loadMyFriends() {
 		JSONParser parser = new JSONParser();
-		JSONObject jsonObject = null;
+		JSONArray jsonArray = null;
 		try {
 			Object obj = parser.parse(new FileReader("my_friends.json"));
-			jsonObject = (JSONObject) obj;
+			jsonArray = (JSONArray) obj;
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -63,8 +64,8 @@ public class UsersDataSource {
 			e.printStackTrace();
 		}
 
-		if (jsonObject != null) {
-			return jsonObject.toString();
+		if (jsonArray != null) {
+			return jsonArray.toString();
 		} else {
 			return "{Could not find file}";
 		}
