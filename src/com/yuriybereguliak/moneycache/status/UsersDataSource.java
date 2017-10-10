@@ -27,9 +27,10 @@ public class UsersDataSource {
 	@Produces(MediaType.APPLICATION_JSON)
 	public String medical() {
 		 JSONParser parser = new JSONParser();
+		 JSONObject jsonObject;
 		 try {
 		 Object obj = parser.parse(new FileReader("my_profile_details.json"));
-         JSONObject jsonObject = (JSONObject) obj;
+         jsonObject = (JSONObject) obj;
 		 } catch (FileNotFoundException e) {
 	            e.printStackTrace();
 	        } catch (IOException e) {
@@ -45,9 +46,10 @@ public class UsersDataSource {
 	@Produces(MediaType.APPLICATION_JSON)
 	public String medical() {
 		 JSONParser parser = new JSONParser();
+		 JSONObject jsonObject;
 		 try {
 		 Object obj = parser.parse(new FileReader("my_friends.json"));
-         JSONObject jsonObject = (JSONObject) obj;
+         jsonObject = (JSONObject) obj;
 		 } catch (FileNotFoundException e) {
 	            e.printStackTrace();
 	        } catch (IOException e) {
