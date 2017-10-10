@@ -25,8 +25,7 @@ import com.yuriybereguliak.moneycache.money.User;
 public class ApiStatus {
 
 	private static final String apiVersion = "v.1.0";
-	
-	
+
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public String getTitle() {
@@ -39,14 +38,14 @@ public class ApiStatus {
 	public String getVersion() {
 		return "Version:" + apiVersion;
 	}
-	
+
 	@GET
 	@Path("/json")
 	@Produces(MediaType.APPLICATION_JSON)
-	public String json(){
+	public String json() {
 		String json = null;
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
-	
+
 		Random random = new Random();
 		String[] images = {
 				"http://icons.iconarchive.com/icons/martz90/circle/512/android-icon.png",
@@ -55,29 +54,29 @@ public class ApiStatus {
 				"http://1.bp.blogspot.com/-ZLllok8mx-I/VRDgvP92M6I/AAAAAAAAIJA/7NmT18_AGeo/s1600/ANDROID.png",
 				"http://www.iconsdb.com/icons/preview/orange/android-4-xxl.png",
 				"http://www.iconsdb.com/icons/preview/orange/android-5-xxl.png",
-				"https://elandroidelibre.elespanol.com/wp-content/uploads/2011/07/themechooser.icon_.png"
-		};
-		
+				"https://elandroidelibre.elespanol.com/wp-content/uploads/2011/07/themechooser.icon_.png" };
+
 		ArrayList<Task> tasks = new ArrayList<Task>();
 		for (int i = 0; i < 30; i++) {
 			Task task = new Task();
 			task.setTaskId(i);
 			task.setTaskTitle("Task #" + i);
-			task.setTaskDescription("Task description. Description #" + random.nextInt(1500));
+			task.setTaskDescription("Task description. Description #"
+					+ random.nextInt(1500));
 			task.setTaskCreate(new Date());
 			task.setImageUri(images[random.nextInt(images.length)]);
 			tasks.add(task);
 		}
-		
+
 		json = gson.toJson(tasks);
-		
+
 		return json;
 	}
-	
+
 	@GET
 	@Path("/user")
 	@Produces(MediaType.APPLICATION_JSON)
-	public String getUserInfo(){
+	public String getUserInfo() {
 		Gson gson = new Gson();
 		User user = new User();
 		user.setmUserId(1);
@@ -86,27 +85,27 @@ public class ApiStatus {
 		user.setmLogin("andruha_sidor_95");
 		return gson.toJson(user);
 	}
-	
+
 	@GET
 	@Path("/medical")
 	@Produces(MediaType.APPLICATION_JSON + "; charset=UTF-8")
 	public String medical() {
-		 JSONParser parser = new JSONParser();
-		 JSONObject jsonObject = null;
-		 try {
-		 Object obj = parser.parse(new FileReader("emergency_format.json"));
-         jsonObject = (JSONObject) obj;
-		 } catch (FileNotFoundException e) {
-	            e.printStackTrace();
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        } catch (ParseException e) {
-	            e.printStackTrace();
-	        }
-		 if (jsonObject != null) {
-			 return jsonObject.toString();
-		 } else {
-			 return "{Could not find file}";
-		 }
+		JSONParser parser = new JSONParser();
+		JSONObject jsonObject = null;
+		try {
+			Object obj = parser.parse(new FileReader("emergency_format.json"));
+			jsonObject = (JSONObject) obj;
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		if (jsonObject != null) {
+			return jsonObject.toString();
+		} else {
+			return "{Could not find file}";
+		}
 	}
 }

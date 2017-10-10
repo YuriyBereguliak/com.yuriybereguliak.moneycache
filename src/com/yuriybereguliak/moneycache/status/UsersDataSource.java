@@ -25,38 +25,48 @@ public class UsersDataSource {
 	@GET
 	@Path("/me")
 	@Produces(MediaType.APPLICATION_JSON)
-	public String medical() {
-		 JSONParser parser = new JSONParser();
-		 JSONObject jsonObject;
-		 try {
-		 Object obj = parser.parse(new FileReader("my_profile_details.json"));
-         jsonObject = (JSONObject) obj;
-		 } catch (FileNotFoundException e) {
-	            e.printStackTrace();
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        } catch (ParseException e) {
-	            e.printStackTrace();
-	        }
-		return jsonObject;
+	public String loadMyProfile() {
+		JSONParser parser = new JSONParser();
+		JSONObject jsonObject = null;
+		try {
+			Object obj = parser
+					.parse(new FileReader("my_profile_details.json"));
+			jsonObject = (JSONObject) obj;
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		if (jsonObject != null) {
+			return jsonObject.toString();
+		} else {
+			return "{Could not find file}";
+		}
 	}
-	
+
 	@GET
 	@Path("/friends")
-	@Produces(MediaType.APPLICATION_JSON)
-	public String medical() {
-		 JSONParser parser = new JSONParser();
-		 JSONObject jsonObject;
-		 try {
-		 Object obj = parser.parse(new FileReader("my_friends.json"));
-         jsonObject = (JSONObject) obj;
-		 } catch (FileNotFoundException e) {
-	            e.printStackTrace();
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        } catch (ParseException e) {
-	            e.printStackTrace();
-	        }
-		return jsonObject;
+	@Produces(MediaType.APPLICATION_JSON + "; charset=UTF-8")
+	public String loadMyFriends() {
+		JSONParser parser = new JSONParser();
+		JSONObject jsonObject = null;
+		try {
+			Object obj = parser.parse(new FileReader("my_friends.json"));
+			jsonObject = (JSONObject) obj;
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+
+		if (jsonObject != null) {
+			return jsonObject.toString();
+		} else {
+			return "{Could not find file}";
+		}
 	}
 }

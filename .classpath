@@ -16,5 +16,17 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/home/yuriy/EclipseProject/com.yuriybereguliak.moneycache/WebContent/WEB-INF/lib/gson-2.2.2.jar"/>
+	<classpathentry kind="lib" path="/home/yuriy/EclipseProject/com.yuriybereguliak.moneycache/WebContent/WEB-INF/lib/jackson-core-asl-1.9.2.jar"/>
+	<classpathentry kind="lib" path="/home/yuriy/EclipseProject/com.yuriybereguliak.moneycache/WebContent/WEB-INF/lib/jackson-jaxrs-1.9.2.jar"/>
+	<classpathentry kind="lib" path="/home/yuriy/EclipseProject/com.yuriybereguliak.moneycache/WebContent/WEB-INF/lib/jackson-mapper-asl-1.9.2.jar"/>
+	<classpathentry kind="lib" path="/home/yuriy/EclipseProject/com.yuriybereguliak.moneycache/WebContent/WEB-INF/lib/jackson-xc-1.9.2.jar"/>
+	<classpathentry kind="lib" path="/home/yuriy/EclipseProject/com.yuriybereguliak.moneycache/WebContent/WEB-INF/lib/jersey-client-1.19.1.jar"/>
+	<classpathentry kind="lib" path="/home/yuriy/EclipseProject/com.yuriybereguliak.moneycache/WebContent/WEB-INF/lib/jersey-core-1.19.1.jar"/>
+	<classpathentry kind="lib" path="/home/yuriy/EclipseProject/com.yuriybereguliak.moneycache/WebContent/WEB-INF/lib/jersey-json-1.19.1.jar"/>
+	<classpathentry kind="lib" path="/home/yuriy/EclipseProject/com.yuriybereguliak.moneycache/WebContent/WEB-INF/lib/jersey-server-1.19.1.jar"/>
+	<classpathentry kind="lib" path="/home/yuriy/EclipseProject/com.yuriybereguliak.moneycache/WebContent/WEB-INF/lib/jersey-servlet-1.19.1.jar"/>
+	<classpathentry kind="lib" path="/home/yuriy/EclipseProject/com.yuriybereguliak.moneycache/WebContent/WEB-INF/lib/jettison-1.1.jar"/>
+	<classpathentry kind="lib" path="/home/yuriy/EclipseProject/com.yuriybereguliak.moneycache/WebContent/WEB-INF/lib/jsr311-api-1.1.1.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
