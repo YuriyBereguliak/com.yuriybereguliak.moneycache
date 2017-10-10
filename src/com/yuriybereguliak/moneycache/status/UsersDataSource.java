@@ -24,7 +24,7 @@ public class UsersDataSource {
 
 	@GET
 	@Path("/me")
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON + "; charset=UTF-8")
 	public String loadMyProfile() {
 		JSONParser parser = new JSONParser();
 		JSONObject jsonObject = null;
