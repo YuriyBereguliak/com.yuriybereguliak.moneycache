@@ -7,7 +7,17 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
 
-import com.yuriybereguliak.moneycache.money.Task;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 @Path("/v1/user")
 public class UsersDataSource {
