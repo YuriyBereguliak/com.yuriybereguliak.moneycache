@@ -28,8 +28,12 @@ public class JobTransferSession {
 	@Path("/GetJobState")
 	@Produces(MediaType.APPLICATION_JSON + "; charset=UTF-8")
 	public String GetJobState() {
-		mNumberOfStates++;
-		if (mNumberOfStates == 5) {
+		
+      int a = 0; 
+      int b = 100;      
+      int randomNumber = a + (int) (Math.random() * b);
+
+		if (randomNumber % 2 == 0) {
 			JobState job = new JobState();
 			job.JobState = 1;
 			job.FileLink = "k/CUyWDgY5mtS";
