@@ -48,7 +48,7 @@ public class JobTransferSession {
 	}	
 
 	class SessionData {
-		long SessionID = 123456789L;
+		String SessionID = "123456789L";
 		long ExpirationDate = 123654L;
 		String KicId = "KicID";
 		String KicVersion = "KicVersion";
@@ -61,6 +61,6 @@ public class JobTransferSession {
 		long LastUpdate = 321654L;
 		String FileLink = null;
 		String ErrorMessage = null;
-		long SessionID = 321654987L;
+		String SessionID = "321654987L";
 	}
 }
