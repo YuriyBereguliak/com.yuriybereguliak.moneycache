@@ -35,7 +35,7 @@ public class JobTransferSession {
 			job.FileLink = "k/CUyWDgY5mtS";
 			return gson.toJson(job);
 		}else {
-			return gson.toJson(new JobState();
+			return gson.toJson(new JobState());
 		}
 	}
 
